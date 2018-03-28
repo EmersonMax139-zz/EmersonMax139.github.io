@@ -11,6 +11,8 @@
       // drawChart() set as callback function after charts are loaded (this line can be anywhere)
       google.charts.setOnLoadCallback(drawAvgChart);
       google.charts.setOnLoadCallback(drawBeerChart);
+      google.charts.setOnLoadCallback(drawWineChart);
+      google.charts.setOnLoadCallback(drawSpiritChart);
 
 
 
@@ -66,7 +68,7 @@
 
         //JILL - added options
         var options = {
-        	colorAxis: {colors: ['#f7fbff','#deebf7','#c6dbef', '#9ecae1', '#6baed6', '#4292c6', '#2171b5', '#08519c', '#08306b']} // JILL - colorbrewer is a good resource for map colors: http://colorbrewer2.org/#type=sequential&scheme=Oranges&n=3 - the more colors you specify, the more control you have, though you only need two to create a range
+        	colorAxis: {colors: ['#f7fcf5', '#e5f5e0', '#c7e9c0', '#a1d99b', '#74c476', '#41ab5d', '#238b45', '#006d2c', '#00441b' ]} // JILL - colorbrewer is a good resource for map colors: http://colorbrewer2.org/#type=sequential&scheme=Oranges&n=3 - the more colors you specify, the more control you have, though you only need two to create a range
         };
 
         // INSTANTIATION
@@ -76,13 +78,70 @@
       }
     }
 
-      </script>
+    function drawWineChart() {
+      var queryString = encodeURIComponent('SELECT A, E');
+
+      var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1qUCbrw-3JScRihoOoNelSmaVfzYem-4W3EamRHk0bFg/gviz/tq?gid=0&headers=1&tq=' + queryString);
+      query.send(handleQueryResponse);
+
+
+    function handleQueryResponse(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+      // Takes data from sheets url, and converts to google's data table format
+      var data = response.getDataTable();
+
+      //JILL - added options
+      var options = {
+        colorAxis: {colors: ['#fcfbfd', '#efedf5', '#dadaeb', '#bcbddc', '#9e9ac8', '#807dba', '#6a51a3', '#54278f', '#3f007d']} // JILL - colorbrewer is a good resource for map colors: http://colorbrewer2.org/#type=sequential&scheme=Oranges&n=3 - the more colors you specify, the more control you have, though you only need two to create a range
+      };
+
+      // INSTANTIATION
+      var chart = new google.visualization.GeoChart(document.getElementById('WineChart')); //
+      chart.draw(data, options); // JILL - you were missing the options parameter here & without it you wouldn't be able to change chart type, set options, i.e. stacking, colors, etc.
+
+    }
+  }
+
+  function drawSpiritChart() {
+    var queryString = encodeURIComponent('SELECT A, D');
+
+    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1qUCbrw-3JScRihoOoNelSmaVfzYem-4W3EamRHk0bFg/gviz/tq?gid=0&headers=1&tq=' + queryString);
+    query.send(handleQueryResponse);
+
+
+  function handleQueryResponse(response) {
+    if (response.isError()) {
+      alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+      return;
+    }
+    // Takes data from sheets url, and converts to google's data table format
+    var data = response.getDataTable();
+
+    //JILL - added options
+    var options = {
+      colorAxis: {colors: ['#ffffff', '#f0f0f0', '#d9d9d9', '#bdbdbd', '#969696', '#737373', '#525252', '#252525', '#000000']} // JILL - colorbrewer is a good resource for map colors: http://colorbrewer2.org/#type=sequential&scheme=Oranges&n=3 - the more colors you specify, the more control you have, though you only need two to create a range
+    };
+
+    // INSTANTIATION
+    var chart = new google.visualization.GeoChart(document.getElementById('SpiritChart')); //
+    chart.draw(data, options); // JILL - you were missing the options parameter here & without it you wouldn't be able to change chart type, set options, i.e. stacking, colors, etc.
+
+  }
+}
+    </script>
   </head>
+
+
   <body>
     <h1 class="title">Countries understood with alcohol</h1>
 
     <!-- MAKE SURE THIS IS THE SAME AS INSTANTIATION!!!!!!!! -->
     <div class="chart" id="AvgChart"></div>
     <div class="chart" id="BeerChart"></div>
+    <div class="chart" id="WineChart"></div>
+    <div class="chart" id="SpiritChart"></div>
   </body>
 </html>
