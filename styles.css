@@ -1,0 +1,16 @@
+body {
+  color: #707272;
+}
+
+.chart {
+  padding: 50px;
+  /*width: 800px;
+  height: 500px;*/
+  border: 2px solid black;
+}
+
+.title {
+  padding: 10px;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
