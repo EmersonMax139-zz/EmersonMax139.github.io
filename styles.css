@@ -2,14 +2,31 @@ body {
   color: #707272;
 }
 
+p {
+  font-size: 18px;
+}
+
 .chart {
   padding: 50px;
-  /*width: 800px;
-  height: 500px;*/
-  border: 2px solid black;
+}
+
+.byline {
+  margin-left: 200px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
 }
 
 .title {
+  margin: 50px 50px 0px 50px;
   text-align: center;
-  font-family: Helvetica, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.buttonWrap {
+  text-align: center;
+}
+
+.content {
+  margin: 20px 100px;
+  font-family: "Times New Roman", Times, serif;
 }

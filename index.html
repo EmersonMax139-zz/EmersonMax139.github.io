@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       // 'current' current version of the visualization() api, can
@@ -49,6 +50,8 @@
         chart.draw(data, options); // JILL - you were missing the options parameter here & without it you wouldn't be able to change chart type, set options, i.e. stacking, colors, etc.
 
       }
+
+
     }
 
       function drawBeerChart() {
@@ -134,14 +137,85 @@
     </script>
   </head>
 
+  <!-- JQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <script>
+  $(document).ready(function() {
+
+
+    $("#avgButton").click(function() {
+      $("#BeerChart").hide();
+      $("#WineChart").hide();
+      $("#SpiritChart").hide();
+      $("#AvgChart").show();
+    });
+
+    $("#beerButton").click(function() {
+      $("#BeerChart").show();
+      $("#WineChart").hide();
+      $("#SpiritChart").hide();
+      $("#AvgChart").hide();
+    });
+
+    $("#wineButton").click(function() {
+      $("#BeerChart").hide();
+      $("#WineChart").show();
+      $("#SpiritChart").hide();
+      $("#AvgChart").hide();
+    });
+
+    $("#spiritButton").click(function() {
+      $("#BeerChart").hide();
+      $("#WineChart").hide();
+      $("#SpiritChart").show();
+      $("#AvgChart").hide();
+    });
+  });
+  </script>
+
+
+
+
 
   <body>
-    <h1 class="title">Countries understood with alcohol</h1>
+      <h1 class="title">Viewing the World Through Beer Goggles; Analysis of Alcohol Consumption by Country</h1>
+      <p class="byline">by Emerson Max</p>
 
-    <!-- MAKE SURE THIS IS THE SAME AS INSTANTIATION!!!!!!!! -->
+      <p class="content">Drinking is a pastime for the United States; going as far back as the nineteenth century when data on the subject was first recorded. The U.S drinks roughly the same average per-person amount of alcohol that it did in 1850, according to the National Institute on Alcohol Abuse and Alcoholism.</p>
+      <p class="content">There are undoubtedly stereotypes and preconceived opinions that people from certain countries drink large amounts of alcohol, or that they only drink a certain type of alcohol. For example, France is thought to be a wine-drinking nation, and a common stereotype is that Irish people drink a lot.</p>
+      <p class="content">The data for this story comes from the World Health Organization and refers to the data from 2010, as it is the most recent dataset that is fully complete. The analysis looked at four sets of data concerning alcohol consumption. The first is the average total liters of pure alcohol that each person in the country drinks, regardless of the type of drinks people are drinking.</p>
+
+
+
+  <!-- CHARTS -->
+    <div class="buttonWrap">
+      <button class="btn btn-primary" id="avgButton">Average</button>
+      <button class="btn btn-primary" id="beerButton" style="background-color:#238b45;">Beer</button>
+      <button class="btn btn-primary" id="wineButton" style="background-color: #807dba;">Wine</button>
+      <button class="btn btn-primary" id="spiritButton" style="background-color:#525252;">Spirit</button>
+    </div>
+
+
+ <!-- MAKE SURE THIS IS THE SAME AS INSTANTIATION!!!!!!!! -->
     <div class="chart" id="AvgChart"></div>
     <div class="chart" id="BeerChart"></div>
     <div class="chart" id="WineChart"></div>
     <div class="chart" id="SpiritChart"></div>
+ <!-- ************************ -->
+
+    <p class="content">Belarus is technically the nation that drinks the most, although they consume a relatively low amount of beer and wine compared with other countries. Their high number comes from being the country that consumes the second most amount of liquor; Grenada drinks the most. The stereotype of Ireland is shown to be somewhat false, as they are ninth in the world in overall consumption.</p>
+    <p class="content">According to the WHO, the excise tax on alcohol in Belarus is three percent, which is very low compared with other countries. Finland, for example, has a 37.9 percent tax. The low taxation on alcohol in Belarus could be a factor in why the country drinks as much as it does.</p>
+    <p class="content">Many of the Islamic Countries abstain from alcohol entirely, as it is generally prohibited within the religion. Additionally, there are over 40 countries across the globe that drink less than 1 liter of alcohol per person.</p>
+    <p class="content">The other three data points are the average number of servings of beer, wine, and spirit that one person in the country drinks per year. As a reference, one serving of liquor is one and a half ounces, or what people in the U.S would consider a "shot."</p>
+    <p class="content">As it turns out, France does drink the most wine at an average 370 servings per person. In this instance, the stereotype is correct.  Grenada drinks the most liquor, as previously mentioned, and Namibia drinks the most beer of any country, at an average 376 servings per person.</p>
+    <p class="content">Relatively speaking, the U.S does not drink a large amount; It is 38th on the list of overall consumption. Culture and stereotypes may say one thing, but the data is always correct.</p>
+
+
+
+
   </body>
 </html>
