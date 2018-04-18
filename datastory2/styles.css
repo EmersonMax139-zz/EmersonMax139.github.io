@@ -1,0 +1,52 @@
+.wrapper {
+    max-width:60%;
+    margin:0 auto;
+    font-family: 'Playfair Display', serif;
+  }
+
+p {
+  font-size: 18px;
+}
+
+.chartWrap {
+  text-align: center;
+}
+
+.chart {
+  display:none;
+}
+
+.byline {
+  margin-bottom: 50px;
+  margin-left: 200px;
+  font-style: italic;
+}
+
+.title {
+  margin: 50px 50px 10px 50px;
+  text-align: center;
+}
+
+.buttonWrap {
+  /*text-align: center;*/
+  margin: 10px;
+}
+
+.content {
+  margin: 20px 100px;
+}
+
+.chartPic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* fixes glitchy hover */
+svg > g > g:last-child {
+  pointer-events: none;
+}
+
+#AvgChart {
+  display: inline;
+}
