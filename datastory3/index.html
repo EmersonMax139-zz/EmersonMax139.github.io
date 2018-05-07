@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Story 3</title>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+  <script src="https://d3js.org/d3-zoom.v1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cairo|Lora" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../datastory3/styles.css">
+</head>
+<body>
+  <button id="resetButton">Reset</button>
+  <h1 id="header">Data Story 3</h1>
+  <div id="viz-wrapper">
+  </div>
+  <!--- This is the code for the d3.js scatterplot -->
+  <script type="text/javascript" src="script.js"></script>
+
+  <div id="content-wrapper">
+    <p class="content">In light of recent tragedies in the United States involving guns, the topic of gun control and gun safety has been a widely debated issue recently.</p>
+    <p class="content">The tragedy in Las Vegas in October of 2017, for example, led to a debate about the “bump stock” that shooter Stephen Paddock used to rain bullets on the Vegas crowd at a quicker rate.</p>
+    <p class="content">The legal purchase of assault weapons became another discussion topic after the gruesome high school shooting in Parkland, Florida in February of this year. Nineteen-year-old Nikolas Cruz killed seventeen people using an Assault Rifle, and this rightfully led many to question whether a regular citizen, especially one so young, should be able to purchase such a weapon.</p>
+    <p class="content">While shootings and tragedies like this seem to be an extremely prevalent thing in the United States, a lot of these feelings can be attributed to the media’s coverage of such events. News of mass shootings or school shootings dominate the news cycle for days and sometimes weeks after the fact.</p>
+    <p class="content">A largely misunderstood point to note is that a majority of gun deaths in America are <span><button id="dotAnimationSuicide">Suicides.</button></span> Each dot on the scatter plot to the right represents one shooting death, (the position on the graph is random; it does not correlate with any other variables.) When you click the word “suicide” in this paragraph, all of the dots which represent a suicide will turn red. To reset the scatteplot at any point, click the reset button in the top left corner.</p>
+    <p class="content">The data used for this story contains all the known shooting deaths in 2014. It was gathered by FiveThirtyEight, and the original stats come from the CDC</p>
+    <p class="content">In 2014, 63.5% of the total shooting deaths were suicides.</p>
+    <p class="content">Of the 21,334 suicides in 2014, 74.9% were <span><button id="dotAnimationSuicideWhiteMale">White Males</button></span> These data points will turn to a darker shade of red when the button In this paragraph is clicked.</p>
+    <p class="content">To specify further, 44% of suicides in 2014 were <span><button id="dotAnimationSuicideWhiteMaleMiddleAged">Middle-aged White Males</button></span> (between 20 and 59-years-old.) Clicking on this button will turn these shooting deaths black.</p>
+    <p class="content">As can be seen, white males are undeniably the population most susceptible to suicide.</p>
+    <p class="content">Many people, in talking about gun violence, ignore this blatant fact: an overwhelming majority of gun deaths in the United States are suicides.</p>
+    <p class="content">Only 34 percent of gun deaths in 2014 were <span><button id="dotAnimationHomicide">Homicides.</button></span> These data points will turn blue.</p>
+    <p class="content">The only remaining uncolored dots are Accidental and Undetermined shooting deaths. These make up a very small percentage of total deaths.</p>
+
+  </div>
+
+</body>

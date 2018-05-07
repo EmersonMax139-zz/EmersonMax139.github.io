@@ -1,0 +1,109 @@
+.content {
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+  padding: 25px 50px 25px 50px;
+}
+
+#header {
+  text-align: center;
+  font-family: 'Lora', serif;
+}
+
+#viz-wrapper {
+  float: right;
+}
+
+/* ------------------ Array of all Circles ---------- */
+
+.dots {
+  fill: lightgray;
+  opacity: .5;
+}
+
+/* ------------------- Classes for the circles within the SVG --------- */
+.suicide {
+  fill: red;
+  opacity: .9;
+}
+
+.suicideWhiteMale {
+  fill: darkred;
+  opacity: .9;
+}
+
+.suicideWhiteMaleMiddleage {
+  fill: black;
+  opacity: .9;
+}
+
+.homicide {
+  fill: blue;
+  opacity: .9;
+}
+
+/* --------------- Buttons ------------------------ */
+
+
+button {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+#resetButton {
+  position: fixed;
+  color: black;
+  font-size: 15px;
+}
+
+#resetButton:hover {
+  background-color: black;
+  color: white;
+}
+
+
+#dotAnimationSuicide {
+  color: red;
+  font-weight: bold;
+}
+
+#dotAnimationSuicide:hover {
+  background-color: red;
+  text-decoration: none;
+  color: black;
+}
+
+#dotAnimationSuicideWhiteMale {
+  color: darkred;
+  font-weight: bold;
+}
+
+#dotAnimationSuicideWhiteMale:hover {
+  background-color: darkred;
+  text-decoration: none;
+  color: black;
+}
+
+#dotAnimationSuicideWhiteMaleMiddleAged {
+  color: black;
+  font-weight: bold;
+}
+
+#dotAnimationSuicideWhiteMaleMiddleAged:hover {
+  background-color: black;
+  text-decoration: none;
+  color: white;
+}
+
+#dotAnimationHomicide {
+  color: blue;
+  font-weight: bold;
+}
+
+#dotAnimationHomicide:hover {
+  color: black;
+  background-color: blue;
+  text-decoration: none;
+}
