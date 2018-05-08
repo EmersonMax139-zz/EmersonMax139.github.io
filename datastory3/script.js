@@ -13,21 +13,22 @@
 
 
   // Parses csv, and then creates array of circles stored in ITEMS
-  // (items is d3 selector to refer to all the circles in svg
+  // items is d3 selector to refer to all the circles in svg
   d3.csv("guns.csv").then(function(data) {
       items = viz.selectAll('circle')
         .data(data)
         .enter()
       .append('circle')
 
-
+      // Sets radius of circle, cx (x position), cy (y position)
+      // positions are random, for scatterplot
       items.attr('r', 2.5);
       items.attr('cx', function(d) {return Math.random() * ((width-padding) - padding) + padding});
       items.attr('cy', function(d) {return Math.random() * ((height-padding) - padding) + padding});
 
 
 
-
+      // gives all circles within the svg:  class="dots"
       items.classed('dots', true);
 
     // Adds class based on truthiness of function.
@@ -101,7 +102,5 @@
       items.classed("hide", false);
       items.classed("highlighted", false);
     })
-
-
-
-  });
+    
+});
