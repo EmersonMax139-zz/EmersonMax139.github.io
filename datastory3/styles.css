@@ -1,44 +1,81 @@
 .content {
   font-size: 20px;
-  text-align: center;
   font-family: 'Cairo', sans-serif;
   padding: 25px 50px 25px 50px;
 }
 
+.contentSmall {
+  font-size: 16px;
+  font-family: 'Cairo', sans-serif;
+  padding: 25px 50px 10px 50px;
+}
+
+.byline {
+  font-size: 15px;
+  font-style: italic;
+  font-family: 'Cairo', sans-serif;
+  margin-left: 30px;
+}
+
 #header {
   text-align: center;
-  font-family: 'Lora', serif;
+  font-family: 'Anton', sans-serif;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 70%
 }
 
 #viz-wrapper {
   float: right;
 }
 
+.memo {
+  font-size: 15px;
+  font-family: 'Cairo', sans-serif;
+  padding: 25px 20px 25px 40px;
+}
+
+
+.links {
+  padding: 5px 50px 5px 50px;
+  text-decoration: none;
+}
+
 /* ------------------ Array of all Circles ---------- */
 
 .dots {
-  fill: lightgray;
+  fill: gray;
   opacity: .5;
 }
 
 /* ------------------- Classes for the circles within the SVG --------- */
+.hide {
+  display: none;
+}
+
 .suicide {
-  fill: red;
+  fill: #5499C7;
   opacity: .9;
 }
 
 .suicideWhiteMale {
-  fill: darkred;
+  fill: #8ECB95  ;
   opacity: .9;
 }
 
 .suicideWhiteMaleMiddleage {
-  fill: black;
+  fill: #4E6F52;
   opacity: .9;
 }
 
 .homicide {
   fill: blue;
+  opacity: .9;
+}
+
+.highlighted {
+  fill: #5499C7;
   opacity: .9;
 }
 
@@ -53,9 +90,10 @@ button {
 }
 
 #resetButton {
-  position: fixed;
-  color: black;
-  font-size: 15px;
+  font-size: 18px;
+  margin-left: 50px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 #resetButton:hover {
@@ -63,47 +101,25 @@ button {
   color: white;
 }
 
+.highlightButton {
+  font-size: 14px;
 
-#dotAnimationSuicide {
-  color: red;
-  font-weight: bold;
 }
 
-#dotAnimationSuicide:hover {
-  background-color: red;
-  text-decoration: none;
-  color: black;
-}
-
-#dotAnimationSuicideWhiteMale {
-  color: darkred;
-  font-weight: bold;
-}
-
-#dotAnimationSuicideWhiteMale:hover {
-  background-color: darkred;
-  text-decoration: none;
-  color: black;
-}
-
-#dotAnimationSuicideWhiteMaleMiddleAged {
-  color: black;
-  font-weight: bold;
-}
-
-#dotAnimationSuicideWhiteMaleMiddleAged:hover {
-  background-color: black;
-  text-decoration: none;
+.highlightButton:hover {
+  background-color: #5499C7;
   color: white;
 }
 
-#dotAnimationHomicide {
-  color: blue;
-  font-weight: bold;
-}
+.removeButton {
+  font-size: 18px;
+  margin-left: 50px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  }
 
-#dotAnimationHomicide:hover {
-  color: black;
-  background-color: blue;
+.removeButton:hover {
+  background-color: gray;
   text-decoration: none;
+  color: white;
 }

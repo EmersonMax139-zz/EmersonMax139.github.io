@@ -1,5 +1,5 @@
   // height and width of the svg
-  var height = 4000,
+  var height = 4500,
        width = 800;
 
   var padding = 50;
@@ -33,7 +33,7 @@
     // Adds class based on truthiness of function.
     // functions determine what population based on data
     d3.select("#dotAnimationSuicide").on("click", function() {
-      items.classed('suicide', function(d) {
+      items.classed('highlighted', function(d) {
         if (d.intent == "Suicide") {
           return true;
         } else {
@@ -42,8 +42,19 @@
       });
     });
 
+    d3.select("#dotAnimationRemoveNonSuicides").on("click", function(d) {
+      items.classed('hide', function(d) {
+        if (d.intent !== "Suicide") {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      items.classed('highlighted', false);
+    });
+
     d3.select("#dotAnimationSuicideWhiteMale").on("click", function() {
-      items.classed('suicideWhiteMale', function(d) {
+      items.classed('highlighted', function(d) {
         if (d.intent == "Suicide" && d.race == "White" && d.sex == "M") {
           return true;
         } else {
@@ -52,8 +63,21 @@
       })
     })
 
+    d3.select("#dotAnimationRemoveNonWhiteMaleSuicides").on("click", function() {
+      items.classed('hide', function(d) {
+        if (!(d.intent == "Suicide" && d.race == "White" && d.sex == "M")) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      items.classed('highlighted', false);
+    })
+
+
+
     d3.select("#dotAnimationSuicideWhiteMaleMiddleAged").on("click", function() {
-      items.classed('suicideWhiteMaleMiddleage', function(d) {
+      items.classed('highlighted', function(d) {
         if (d.intent == "Suicide" && d.race == "White" && d.sex == "M" && ((d.age >= 20) && (d.age <= 59))) {
           return true;
         } else {
@@ -74,10 +98,8 @@
 
     // Removes all classes from circles, resetting to original dots{} csss
     d3.select("#resetButton").on("click", function() {
-      items.classed("suicide", false);
-      items.classed("suicideWhiteMale", false);
-      items.classed("suicideWhiteMaleMiddleage", false);
-      items.classed("homicide", false);
+      items.classed("hide", false);
+      items.classed("highlighted", false);
     })
 
 
