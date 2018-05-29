@@ -1,0 +1,12 @@
+.new-post-button {
+  margin: 20px;
+}
+
+.author {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.post:hover {
+  background-color: gray;
+}

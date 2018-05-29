@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span>Emer's App</span>
+
+  <span class="example-fill-remaining-space"></span>
+
+  <span>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item routerLink="/">Home</button>
+      <button mat-menu-item>About</button>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </span>
+</mat-toolbar>
+
+
+<router-outlet></router-outlet>

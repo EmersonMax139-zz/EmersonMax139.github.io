@@ -1,0 +1,18 @@
+<div class="form-wrap">
+
+<form class="new-post-form" (ngSubmit)="addPost()" #myForm="ngForm">
+  <mat-form-field class="new-post-full-width">
+    <textarea matInput type="text" name="name" [(ngModel)]="name" placeholder="NAME"></textarea>
+  </mat-form-field>
+  <mat-form-field class="new-post-full-width">
+    <input matInput type="text" name="title" [(ngModel)]="title" placeholder="TITLE">
+  </mat-form-field>
+  <mat-form-field class="new-post-full-width">
+    <textarea matInput type="text" name="post" [(ngModel)]="post" placeholder="POST"></textarea>
+  </mat-form-field>
+  <mat-checkbox id="contentCheckbox">I understand that this content will actually be posted on the internet</mat-checkbox>
+  <button mat-stroked-button type="submit" class="new-post-button">Add Post</button>
+</form>
+
+
+</div>
